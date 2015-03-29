@@ -34,12 +34,19 @@ var HEADER_DATA = "\n" + ICON_PREFIX + ":after {display: block;content: ' ';widt
 
 fs.writeFileSync(OUTPUT_CSSFILE, '');
 fs.writeFileSync(OUTPUT_SCSSFILE, '');
+
+var htmlfile = fs.readFileSync("./index.html.tmpl", 'utf8');
+var document = cheerio.load(htmlfile);
+
+
 request(url, function(error, response, html) {
   if (!error) {
     var $ = cheerio.load(html);
 
     fs.appendFileSync(OUTPUT_CSSFILE, HEADER_DATA);
     fs.appendFileSync(OUTPUT_SCSSFILE, HEADER_DATA);
+
+    var htmlForIcons = "\n";
 
     $('div').each(function() {
       var data = $(this),
@@ -52,7 +59,13 @@ request(url, function(error, response, html) {
       console.log("added: "+class_name);
       fs.appendFileSync(OUTPUT_CSSFILE, result);
       fs.appendFileSync(OUTPUT_SCSSFILE, result);
+
+      htmlForIcons = htmlForIcons +'\n <p><i class="g-icon '+className.slice(1)+'">.g-icon'+className+'</i></p> \n';
     });
+
+    //
+    document('.icons#target').html(htmlForIcons);
+    fs.writeFileSync("./index.html", document.html(),'utf8');
 
     new compressor.minify({
       type: 'clean-css',
