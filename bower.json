@@ -1,0 +1,21 @@
+{
+  "name": "google-material-design-icons-sass",
+  "main": "./dist/google-material-design-icons-sass.scss",
+  "version": "1.0.0",
+  "homepage": "https://github.com/blairanderson/google-material-design-icons-sass",
+  "authors": [
+    "Blair Anderson <blair81@gmail.com>"
+  ],
+  "description": "icon classes for the material-design-icons released by google, backed by rawgit cdn",
+  "keywords": [
+    "material-design"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
