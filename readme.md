@@ -8,9 +8,9 @@ Include the `dist/google-material-design-icons-sass-.scss` file in your project,
 
 For Example:
 
+
 ```html
-<link type="stylesheet" src="">
+<link rel="stylesheet" href="//cdn.rawgit.com/blairanderson/google-material-design-icons-sass/v1.0.0/dist/google-material-design-icons-sass.css">
 
 <i class="g-icon g-icon-alarm-on"></i>
-
 ```
