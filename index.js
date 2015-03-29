@@ -29,7 +29,7 @@ var ENV = PROD;
 var OUTPUT_CSSFILE = "./dist/google-material-design-icons-sass.css";
 var OUTPUT_CSSMINFILE = "./dist/google-material-design-icons-sass.min.css";
 var OUTPUT_SCSSFILE = "./dist/google-material-design-icons-sass.scss";
-var HEADER_DATA = "\n" + ICON_PREFIX + ":after {display: block;content: ' ';width: 24px;height: 24px;margin: 9px 5px;float: left;} \n \n \n";
+var HEADER_DATA = "\n" + ICON_PREFIX + ":after {display: block;content: ' ';width: 24px;height: 24px;float: left;} \n \n \n";
 
 
 fs.writeFileSync(OUTPUT_CSSFILE, '');
